@@ -7,11 +7,7 @@ import java.util.Scanner;/**
 public class Main {
 
 
-/* Bedroom 1 (The Starting Room)
-*   This room contains 1 ending, and 2 exits
-*   ENDING: Go-Back-To-Bed
-*   EXITS: Bathroom1 & Hall1
-*/
+
 
 
 //Main Function AKA Start Function
