@@ -39,6 +39,8 @@ public static void main(String[] args) throws InterruptedException {
         Thread.sleep(2000);
         Rooms.Bedroom1();
     };
+
+    userInput.close();
 }
 
 }
