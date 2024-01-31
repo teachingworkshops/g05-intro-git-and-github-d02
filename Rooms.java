@@ -175,7 +175,71 @@ public class Rooms {
     
 
 
-    //TODO:  BED/BR2
+    //Bed/bath2: DONE
+    public static void Bedroom2() throws InterruptedException{
+        Scanner userInput = new Scanner(System.in);
+       System.out.println("LOCATION: Bedroom 2");
+       Thread.sleep(1500);
+       System.out.println("> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
+       System.out.println("SELECT: Hall, Bathroom, Bed, Dresser");
+
+       String choice = userInput.nextLine();
+
+       
+        switch (choice) {
+            case "hall": //Player chooses the hall
+                hall2();
+                break;       
+            case "bathroom" : //Player chooses the bathroom
+                Bath2();
+                break;
+            case "bed" : //User chooses the bed
+                System.out.println("\n Under the bed doesn't have anything of significance ");
+                Bedroom2();
+                break;
+            case "dresser":
+                System.out.println("\n Inside the dresser contains a sus looking spaceman plushie ");
+                Thread.sleep(1500);
+                Bedroom2(); //Loop back
+                break;
+            default: 
+                System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+                Bedroom1();//Loop back
+                break;
+           }
+           userInput.close();
+        }
+
+        public static void Bath2() throws InterruptedException{
+            Scanner userInput = new Scanner(System.in);
+            
+            System.out.println("\nLOCATION: Bathroom 2 ");
+            Thread.sleep(1500);
+            System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
+            Thread.sleep(1500);
+            System.out.println("> In the bathroom you see: A medicine cabinet above the sink, and a toilet. ");
+            System.out.println("SELECT: Cabinet, Bedroom");
+    
+            String choice = userInput.nextLine();
+            switch(choice){
+                case "cabinet":
+                    System.out.println("> You open the medicine cabinet and see bottles of pills");
+                    Thread.sleep(1500);
+                    Bath1();
+                    break;
+                case "bedroom":
+                    Bedroom2();
+                    break;
+                default:
+                System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+                Bath1();
+                break;
+            }
+    
+            userInput.close();
+        }
+
+
     //TODO:  BED/BR3
     //TODO:  Dining/Kitchen
 
