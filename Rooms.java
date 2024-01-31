@@ -345,7 +345,7 @@ public static void Hall3() throws InterruptedException{
         
             break;
         case "main hallway" : //User chooses the main hallway
-            hall1();
+            Hall1();
             break;
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
