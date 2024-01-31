@@ -188,17 +188,17 @@ public class Rooms {
        
         switch (choice) {
             case "hall": //Player chooses the hall
-                hall2();
+                Hall1();
                 break;       
             case "bathroom" : //Player chooses the bathroom
                 Bath2();
                 break;
             case "bed" : //User chooses the bed
-                System.out.println("\n Under the bed doesn't have anything of significance ");
+                System.out.println("\n > Under the bed doesn't have anything of significance ");
                 Bedroom2();
                 break;
             case "dresser":
-                System.out.println("\n Inside the dresser contains a sus looking spaceman plushie ");
+                System.out.println("\n > Inside the dresser contains a sus looking spaceman plushie ");
                 Thread.sleep(1500);
                 Bedroom2(); //Loop back
                 break;
@@ -241,6 +241,69 @@ public class Rooms {
 
 
     //TODO:  BED/BR3
+    public static void Bedroom3() throws InterruptedException{
+        Scanner userInput = new Scanner(System.in);
+       System.out.println("LOCATION: Bedroom 3");
+       Thread.sleep(1500);
+       System.out.println("> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
+       System.out.println("SELECT: Hall, Bathroom, Bed, Dresser");
+
+       String choice = userInput.nextLine();
+
+       
+        switch (choice) {
+            case "hall": //Player chooses the hall
+                Hall1();
+                break;       
+            case "bathroom" : //Player chooses the bathroom
+                Bath3();
+                break;
+            case "bed" : //User chooses the bed
+                System.out.println("\n > You see a pair of jeans on top of the bed ");
+                Bedroom3();
+                break;
+            case "dresser": //Player looks in dresser
+                System.out.println("\n > Inside the dresser contains a pair of space boots ");
+                Thread.sleep(1500);
+                Bedroom3(); //Loop back
+                break;
+            default: 
+                System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+                Bedroom3();//Loop back
+                break;
+           }
+           userInput.close();
+        }
+        public static void Bath3() throws InterruptedException{
+            Scanner userInput = new Scanner(System.in);
+            
+            System.out.println("\nLOCATION: Bathroom 3 ");
+            Thread.sleep(1500);
+            System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
+            Thread.sleep(1500);
+            System.out.println("> In the bathroom you see: A sink, and a toilet. ");
+            System.out.println("SELECT: Toilet, Bedroom");
+    
+            String choice = userInput.nextLine();
+            switch(choice){
+                case "toilet":
+                    System.out.println("> You reach your hands in the back of the toilet. \n You find nothing but now your hands are wet.");
+                    Thread.sleep(1500);
+                    Bath3();
+                    break;
+                case "bedroom":
+                    Bedroom3();
+                    break;
+                default:
+                System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+                Bath1();
+                break;
+            }
+    
+            userInput.close();
+        }
+
+        
     //TODO:  Dining/Kitchen
 
 /*   Hall 2
