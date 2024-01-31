@@ -145,13 +145,13 @@ public class Rooms {
                 Bedroom1();
                 break;
             case "bedroom 2":
-                //TODO: Connect to Bedroom2 once made
+                Bedroom2();
                 break;
             case "bedroom 3":
-                //TODO: Connect to Bedroom3 once made
+                Bedroom3();
                 break;
             case "dining":
-                //TODO: Connect to Dining once made
+                DiningRoom();
                 break;
             case "airlock":
                 Airlock();
