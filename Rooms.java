@@ -26,7 +26,7 @@ public class Rooms {
                 bath1();
                 break;
             case "bed" : //User chooses the bed
-                //Endings.b2b();
+                Endings.b2b();
                 break;
             case "dresser":
                 System.out.println("\n> Inside the dresser contains clothing that you are already wearing ");
@@ -43,7 +43,7 @@ public class Rooms {
     }
 
     //Bathroom 1 (Connected to starting Bathoom                                                                                                                                                                           room)
-    public static void bath1(){//TODO: Finish (Dustin)
+    public static void bath1()throws InterruptedException{//TODO: Finish (Dustin)
         Scanner userInput = new Scanner(System.in);
         
         System.out.println("LOCATION: Your Bathroom");
@@ -52,7 +52,7 @@ public class Rooms {
         userInput.close();
     }
 
-    public static void airlock(){//TODO: Finish (Dustin)
+    public static void airlock()throws InterruptedException{//TODO: Finish (Dustin)
         Scanner userInput = new Scanner(System.in);
         
         System.out.println("LOCATION: The Airlock");
