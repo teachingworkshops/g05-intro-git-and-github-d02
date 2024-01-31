@@ -188,7 +188,9 @@ public static void hall2() throws InterruptedException{
    System.out.println("LOCATION: Upper Floor Hallway");
    Thread.sleep(1500);
    System.out.println("> You enter the hallway of the upper floor");
+   Thread.sleep(1500);
    System.out.println("> This hallway has multiple doors you can see: the Comms Room, the Armory, and the Pilots Room");
+   Thread.sleep(1500);
    System.out.println("> You can also head downstairs to the main hallway");
    System.out.println("SELECT: Comms Room, Armory, Pilots Room, main hallway");
 
@@ -232,6 +234,7 @@ public static void armory()throws InterruptedException{//TODO: Finish
     System.out.println("LOCATION: Armory ");
     Thread.sleep(1500);
     System.out.println("> The armory contains two chests, each seems to require a different key to unlock");
+    Thread.sleep(1500);
     System.out.println("> You can try to unlock either chest or return to the hallway");
     System.out.println("SELECT: Hall, Left Chest, Right Chest");
 
@@ -247,6 +250,7 @@ public static void armory()throws InterruptedException{//TODO: Finish
             System.out.println("\n> You are unable to open this chest");
             // if player has correct key
             System.out.println("\n> You open the chest to find your pants somehow ended up inside");
+            Thread.sleep(1500);
             System.out.println("\n> You put on the pants as you wonder how that happened");
             Thread.sleep(2000);
             armory(); //Loop back
@@ -287,6 +291,7 @@ public static void comms()throws InterruptedException{
     System.out.println("LOCATION: Comms Room ");
     Thread.sleep(1500);
     System.out.println("> the Cooms Room is pretty empty, but you notice something in one of the screens reflections");
+    Thread.sleep(1500);
     System.out.println("> It seems there is something in one of the chairs, you can turn the chair or exit back to the hall");
     System.out.println("SELECT: Hall, Chair");
 
@@ -300,6 +305,7 @@ public static void comms()throws InterruptedException{
             break;       
         case "chair": //Player investigates the chair
             System.out.println("\n> You turn the chair around to find you helmet resting in the seat");
+            Thread.sleep(1500);
             System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
             Thread.sleep(2000);
             comms(); //Loop back
@@ -328,7 +334,9 @@ public static void hall3() throws InterruptedException{
    System.out.println("LOCATION: Lower Floor Hallway");
    Thread.sleep(1500);
    System.out.println("> You enter the hallway of the lower floor");
+   Thread.sleep(1500);
    System.out.println("> This hallway has two doors you can see: the Engine Room and the Boiler Room");
+   Thread.sleep(1500);
    System.out.println("> You can also head upstairs to the main hallway");
    System.out.println("SELECT: Engine Room,  Boiler Room, main hallway");
 
