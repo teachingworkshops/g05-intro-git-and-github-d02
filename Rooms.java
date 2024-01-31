@@ -157,10 +157,10 @@ public class Rooms {
                 Airlock();
                 break;
             case "upstairs":
-                //TODO: Connect to Hall2 once made
+                hall2();
                 break;
             case "downstairs": 
-                //TODO: Connect to Hall3 once made
+                hall3();
                 break;
             default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
@@ -323,7 +323,7 @@ public static void comms()throws InterruptedException{
   *   This room contains multiple connections
   *   Connections: Engine Room, Boiler Room, Main Hallway
  */
-public static void Hall3() throws InterruptedException{
+public static void hall3() throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
    System.out.println("LOCATION: Lower Floor Hallway");
    Thread.sleep(1500);
