@@ -20,8 +20,7 @@ public class Endings {
     
     //Player completes their goal of obtaining their donut
     public static void spaceDonut() throws InterruptedException{
-        System.out.println("\n> You have done it, after collecting the space suit parts you made it into space and got your donut, \n
-                                Was it worth all that effort? You like to tell yourself that it was"); 
+        System.out.println("\n> You have done it, after collecting the space suit parts you made it into space and got your donut,\n Was it worth all that effort? You like to tell yourself that it was"); 
         System.out.println("ENDING: Space Donut");
         Thread.sleep(4000);
         Main.start();
