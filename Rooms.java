@@ -21,11 +21,9 @@ public class Rooms {
         switch (choice) {
             case "hall": //Player chooses the hall
                 hall1();
-                
                 break;       
             case "bathroom" : //Player chooses the bathroom
                 bath1();
-            
                 break;
             case "bed" : //User chooses the bed
                 //Endings.b2b();
@@ -35,28 +33,41 @@ public class Rooms {
                 Thread.sleep(2000);
                 Bedroom1(); //Loop back
                 break;
-            default:
+            default: 
                 System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-                Bedroom1();
+                Bedroom1();//Loop back
                 break;
            }
            userInput.close();
               
+    }
 
-        
-    }
-    public static void hall1(){//TODO: Finish (Dustin)
-        System.out.println("Hall Test");
-    }
-    //Bathroom 1 (Connecte to starting room)
+    //Bathroom 1 (Connected to starting Bathoom                                                                                                                                                                           room)
     public static void bath1(){//TODO: Finish (Dustin)
-        System.out.println("Bath Test");
+        Scanner userInput = new Scanner(System.in);
+        
+        System.out.println("LOCATION: Your Bathroom");
+        Thread.sleep(1500);
+
+        userInput.close();
     }
 
     public static void airlock(){//TODO: Finish (Dustin)
-        System.out.println("Airlock Test");
+        Scanner userInput = new Scanner(System.in);
+        
+        System.out.println("LOCATION: The Airlock");
+        Thread.sleep(1500);
+
+        userInput.close();
     }
 
+    //Hall 1 (Connnected to Bedroom1, Bedroom2, Dining Room, Airlock, Hall2 and Hall3)
+    public static void hall1(){//TODO: Finish (Dustin)
+        System.out.println("Hall Test");
+    }
+ 
+
+    
 
 
     //TODO:  BED/BR2
