@@ -204,7 +204,7 @@ public class Rooms {
                 break;
             default: 
                 System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-                Bedroom1();//Loop back
+                Bedroom2();//Loop back
                 break;
            }
            userInput.close();
@@ -232,7 +232,7 @@ public class Rooms {
                     break;
                 default:
                 System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-                Bath1();
+                Bath2();
                 break;
             }
     
@@ -240,7 +240,7 @@ public class Rooms {
         }
 
 
-    //TODO:  BED/BR3
+    //Bed/BR3 DONE
     public static void Bedroom3() throws InterruptedException{
         Scanner userInput = new Scanner(System.in);
        System.out.println("LOCATION: Bedroom 3");
@@ -296,7 +296,7 @@ public class Rooms {
                     break;
                 default:
                 System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-                Bath1();
+                Bath3();
                 break;
             }
     
@@ -304,7 +304,74 @@ public class Rooms {
         }
 
         
-    //TODO:  Dining/Kitchen
+    //Dining/Kitchen: DONE
+    public static void DiningRoom() throws InterruptedException{
+        Scanner userInput = new Scanner(System.in);
+        
+        System.out.println("\nLOCATION: Dining Room ");
+        Thread.sleep(1500);
+        System.out.println("> In the Dining Room you see: A table, chairs, a door leading to the Kitchen and a door leading back to the hall. ");
+        System.out.println("SELECT: Table, Chairs, Kitchen, Hall");
+
+        String choice = userInput.nextLine();
+        switch(choice){
+            case "Table":
+                System.out.println("> You see a glass of water and decide to drink it. \n 'hm tastes old. hopefully it wasn't out to long. '");
+                Thread.sleep(1500);
+                DiningRoom();
+                break;
+            case "Chairs":
+                System.out.println("> You sit in a chair and decide to take a load off for a couple of minutes ");
+                Thread.sleep(1500);
+                DiningRoom();
+                break;
+            case "Kitchen":
+                Kitchen();
+                break;
+            default:
+            System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+            DiningRoom();
+            break;
+        }
+
+        userInput.close();
+    }
+    public static void Kitchen() throws InterruptedException{
+        Scanner userInput = new Scanner(System.in);
+        
+        System.out.println("\nLOCATION: Kitchen ");
+        Thread.sleep(1500);
+        System.out.println("> In the Kitchen you see: A grill,  a stovetop, a sink, and a door leading to the Dining Hall. ");
+        System.out.println("SELECT: Grill, Stovetop, Sink, Dining Room ");
+
+        String choice = userInput.nextLine();
+        switch(choice){
+            case "grill":
+                System.out.println("> You see that the grill is still on. 'That's a fire hazard. '");
+                Thread.sleep(1500);
+                Kitchen();
+                break;
+            case "stovetop":
+                System.out.println("> You see a grilled cheese but it doesn't look appetizing. You are really craving the donut. ");
+                Thread.sleep(1500);
+                Kitchen();
+                break;
+            case "sink":
+                System.out.println("> You look in the sink and find a donut, but it is soaking wet.");
+                Thread.sleep(1500);
+                Kitchen();
+                break;
+            case "dining room":
+                DiningRoom();
+                break;
+            default:
+            System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+            Kitchen();
+            break;
+        }
+
+        userInput.close();
+    }
 
 /*   Hall 2
   *   This room contains multiple connections
