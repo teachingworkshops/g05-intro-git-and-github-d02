@@ -467,8 +467,41 @@ public static void armory()throws InterruptedException{//TODO: Finish
 }
 
 
-public static void pilots(){//TODO: Finish
-    System.out.println("pilots Test");
+public static void pilots() throws InterruptedException{
+    Scanner userInput = new Scanner(System.in);
+    
+    System.out.println("\nLOCATION: Pilot's room ");
+    Thread.sleep(1500);
+    System.out.println("> In the Pilot's room you see 2 seats, a control panel, instruments and doorway to Hall2. ");
+    System.out.println("SELECT: Seat, Control Panel, Instruments, Hall2");
+
+    String choice = userInput.nextLine();
+    switch(choice){
+        case "seat":
+            System.out.println("> You take a seat ");
+            Thread.sleep(1500);
+            pilots();
+            break;
+        case "control panel":
+            System.out.println("> You push a button on the control panel but nothing happens. ");
+            Thread.sleep(1500);
+            pilots();
+            break;
+        case "instruments":
+            System.out.println("> You try to move the instruments but they are locked in place. ");
+            Thread.sleep(1500);
+            pilots();
+            break;
+        case "Hall2":
+            hall2();
+            break;
+        default:
+        System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+        pilots();
+        break;
+    }
+
+    userInput.close();
 }
 
 
@@ -516,7 +549,8 @@ public static void comms()throws InterruptedException{
     }
 
 
-    //TODO: Pilots room
+    
+
 
 
 /*   Hall 3
