@@ -660,12 +660,21 @@ public static void boiler() throws InterruptedException{//TODO: Finish
                 
             break;       
         case "jacket" : //Player chooses the jacket
-            System.out.println("> You take the jacket off the wall and realize it's built for space travel!");
-            Thread.sleep(1500);
-            System.out.println("> You put the jacket on and think to yourself, 'Oh yeah, I look cool'");
-            Thread.sleep(2000);
-            boiler(); //Loop back
-            break;
+            if (Inventory.hasJacket == true){
+                System.out.println("> You admire your jacket once more, 'I look incredible in this!'");
+                Thread.sleep(2000);
+                boiler(); //Loop back
+                break;
+            }
+            else{
+                System.out.println("> You take the jacket off the wall and realize it's built for space travel!");
+                Thread.sleep(1500);
+                System.out.println("> You put the jacket on and think to yourself, 'Oh yeah, I look cool'");
+                Thread.sleep(2000);
+                Inventory.collectJacket();
+                boiler(); //Loop back
+                break;
+            }
         case "bucket" : //Player chooses to check the secret bucket
             System.out.println("\n> You investigate the mysterious bucket and find a tasty treat inside!");
             Thread.sleep(2000);
