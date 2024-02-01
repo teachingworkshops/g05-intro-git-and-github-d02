@@ -36,6 +36,14 @@ public class Inventory {
     public static boolean emptyChestOpen() {
         return emptyChest;
     }
+    
+    public static boolean hasFullSuit(){
+        if(helmet&&jacket&&pants&&boots){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     // Method to update the status of each item
     public static void collectHelmet() {
