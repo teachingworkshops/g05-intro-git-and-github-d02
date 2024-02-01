@@ -530,12 +530,20 @@ public static void comms()throws InterruptedException{
                 
             break;       
         case "chair": //Player investigates the chair
-            System.out.println("\n> You turn the chair around to find you helmet resting in the seat");
-            Thread.sleep(1500);
-            System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
-            Thread.sleep(2000);
-            comms(); //Loop back
-            break;
+            if(Inventory.hasHelmet() == true){
+                System.out.println("> You sit proudly in the chair");
+                Thread.sleep(2000);
+                comms(); //Loop back
+                break;
+            }
+            else{
+                System.out.println("\n> You turn the chair around to find you helmet resting in the seat");
+                Thread.sleep(1500);
+                System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
+                Thread.sleep(2000);
+                comms(); //Loop back
+                break;
+            }
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             comms();
