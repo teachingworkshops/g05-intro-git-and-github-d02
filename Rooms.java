@@ -268,6 +268,9 @@ public class Rooms {
             case "dresser": //Player looks in dresser
                 if (!Inventory.hasBoots()){
                  System.out.println("\n > Inside the dresser contains a pair of space boots");
+                 Thread.sleep(1500);
+                 System.out.println("> You put them on, they feel heavier than anticipated");
+                 Thread.sleep(1500);
                  Inventory.collectBoots();
                 }
                 else {
@@ -452,11 +455,11 @@ public static void armory()throws InterruptedException{
             break;       
         case "left chest": //Player investigates the chair
             //if player does not have correct key
-            if(Inventory.hasRealKey()){
+            if(Inventory.hasRealKey() == false){
                 System.out.println("> You are unable to open this chest");
             }
             // if player has correct key
-            else if(Inventory.hasPants()) {
+            else if(Inventory.hasPants() == false) {
                 System.out.println("> You open the chest to find your pants somehow ended up inside");
                 Thread.sleep(1500);
                 System.out.println("> You put on the pants as you wonder how that happened");
@@ -469,7 +472,7 @@ public static void armory()throws InterruptedException{
             armory(); //Loop back
             break;
         case "right chest": //Player investigates the chair
-            if(Inventory.hasFakeKey()){
+            if(Inventory.hasFakeKey() == false){
             //if player does not have correct key
                 System.out.println("> You are unable to open this chest");
             }
@@ -658,7 +661,7 @@ public static void engine() throws InterruptedException{
             if(Inventory.hasRealKey() == true){
                 System.out.println("> This panel is completely unfunctional! Someone should get that checked out");
                 Thread.sleep(1500);
-                boiler(); //Loop back
+                engine(); //Loop back
                 break;
             }
             else{
