@@ -266,7 +266,14 @@ public class Rooms {
                 Bedroom3();
                 break;
             case "dresser": //Player looks in dresser
-                System.out.println("> Inside the dresser contains a pair of space boots ");
+                if (!Inventory.hasBoots()){
+                 System.out.println("\n > Inside the dresser contains a pair of space boots");
+                 Inventory.collectBoots();
+                }
+                else {
+                    System.out.println("\n > You've already found your boots in this dresser");
+                }
+                
                 Thread.sleep(1500);
                 Bedroom3(); //Loop back
                 break;
