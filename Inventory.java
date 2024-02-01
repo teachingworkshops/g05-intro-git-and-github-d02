@@ -1,13 +1,13 @@
 public class Inventory {
-    private boolean helmet = false;
+    private static boolean helmet = false;
     private static boolean jacket = false; //EXAMPLE
-    private boolean pants = false;
-    private boolean boots = false;
-    private boolean fakeKey = false;
-    private boolean realKey = false;
+    private static boolean pants = false;
+    private static boolean boots = false;
+    private static boolean fakeKey = false;
+    private static boolean realKey = false;
 
     // Getter methods for each item
-    public boolean hasHelmet() {
+    public static boolean hasHelmet() {
         return helmet;
     }
 
@@ -15,44 +15,44 @@ public class Inventory {
         return jacket;
     }
 
-    public boolean hasPants() {
+    public static boolean hasPants() {
         return pants;
     }
 
-    public boolean hasBoots() {
+    public static boolean hasBoots() {
         return boots;
     }
 
-    public boolean hasFakeKey() {
+    public static boolean hasFakeKey() {
         return fakeKey;
     }
 
-    public boolean hasRealKey() {
+    public static boolean hasRealKey() {
         return realKey;
     }
 
     // Method to update the status of each item
-    public void collectHelmet() {
+    public static void collectHelmet() {
         helmet = true;
     }
 
-    public void collectJacket() {
+    public static void collectJacket() {
         jacket = true;
     }
 
-    public void collectPants() {
+    public static void collectPants() {
         pants = true;
     }
 
-    public void collectBoots() {
+    public static void collectBoots() {
         boots = true;
     }
 
-    public void collectFakeKey() {
+    public static void collectFakeKey() {
         fakeKey = true;
     }
 
-    public void collectRealKey() {
+    public static void collectRealKey() {
         realKey = true;
     }
 }

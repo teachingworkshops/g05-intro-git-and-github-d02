@@ -64,14 +64,13 @@ public class Rooms {
                 break;
             case "key":
                 //TODO: After inventory tracking is implemented, add following code
-                /*
-                 * if(key = false)
-                 *       System.out.println("You pick up the bronze key, unsure as to what it opens");
-                 *       key = true
-                 * else
-                 *      System.out.println("You already picked up the key");
-                 */
-                System.out.println("> You pick up the bronze key, unsure as to what it opens");
+                
+                if(Inventory.hasFakeKey() == false){
+                    System.out.println("You pick up the bronze key, unsure as to what it opens");
+                    Inventory.collectFakeKey();
+                }else{
+                    System.out.println("You already picked up the key");
+                }
                 Thread.sleep(1500);
                 Bath1();
                 break;
