@@ -12,7 +12,7 @@ public class Rooms {
        System.out.println("LOCATION: Your Bedroom");
        Thread.sleep(1500);
        System.out.println("> In your bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, Your bed and a dresser");
-       System.out.println("SELECT: Hall, Bathroom, Bed, Dresser");
+       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
        String choice = userInput.nextLine();
 
@@ -28,7 +28,7 @@ public class Rooms {
                 Endings.b2b();
                 break;
             case "dresser":
-                System.out.println("\n Inside the dresser contains clothing that you are already wearing ");
+                System.out.println("> Inside the dresser contains clothing that you are already wearing ");
                 Thread.sleep(1500);
                 Bedroom1(); //Loop back
                 break;
@@ -53,7 +53,7 @@ public class Rooms {
         System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
         Thread.sleep(1500);
         System.out.println("> In the bathroom you see: A mirror and a weird key sitting upon the tank of the toilet");
-        System.out.println("SELECT: Mirror, Key, Bedroom");
+        System.out.println("SELECT: mirror, key, bedroom");
 
         String choice = userInput.nextLine();
         switch(choice){
@@ -63,13 +63,11 @@ public class Rooms {
                 Bath1();
                 break;
             case "key":
-                //TODO: After inventory tracking is implemented, add following code
-                
                 if(Inventory.hasFakeKey() == false){
-                    System.out.println("You pick up the bronze key, unsure as to what it opens");
+                    System.out.println("> You pick up the bronze key, unsure as to what it opens");
                     Inventory.collectFakeKey();
                 }else{
-                    System.out.println("You already picked up the key");
+                    System.out.println("> You already picked up the key");
                 }
                 Thread.sleep(1500);
                 Bath1();
@@ -99,7 +97,7 @@ public class Rooms {
         System.out.println("> You notice that the locker that typically contains your space suit part is empty. ");
         Thread.sleep(1500);
         System.out.println("> 'I must have misplace my gear last night, I can't remember much about last night I guess'");
-        System.out.println("SELECT: Hall, Space");
+        System.out.println("SELECT: hall, space");
         
         String choice = userInput.nextLine();
         switch(choice){
@@ -141,7 +139,7 @@ public class Rooms {
         System.out.println("> The main level hallway, this level contains many residential needs such as living and dining");
         Thread.sleep(1500);
         System.out.println("> This level also contains the airlock to go out into space and stairs to the upper and lower levels");
-        System.out.println("SELECT: Bedroom 1, Bedroom 2, Bedroom 3, Dining, Airlock, Upstairs, Downstairs");
+        System.out.println("SELECT: bedroom 1 (Your Bedroom), bedroom 2, bedroom 3, dining, airlock, upstairs, downstairs");
         String choice = userInput.nextLine();
         switch(choice){
             case "bedroom 1":
@@ -184,7 +182,7 @@ public class Rooms {
        System.out.println("LOCATION: Bedroom 2");
        Thread.sleep(1500);
        System.out.println("> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
-       System.out.println("SELECT: Hall, Bathroom, Bed, Dresser");
+       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
        String choice = userInput.nextLine();
 
@@ -197,11 +195,11 @@ public class Rooms {
                 Bath2();
                 break;
             case "bed" : //User chooses the bed
-                System.out.println("\n > Under the bed doesn't have anything of significance ");
+                System.out.println("> Under the bed doesn't have anything of significance");
                 Bedroom2();
                 break;
             case "dresser":
-                System.out.println("\n > Inside the dresser contains a sus looking spaceman plushie ");
+                System.out.println("> Inside the dresser contains a sus looking spaceman plushie");
                 Thread.sleep(1500);
                 Bedroom2(); //Loop back
                 break;
@@ -221,7 +219,7 @@ public class Rooms {
             System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
             Thread.sleep(1500);
             System.out.println("> In the bathroom you see: A medicine cabinet above the sink, and a toilet. ");
-            System.out.println("SELECT: Cabinet, Bedroom");
+            System.out.println("SELECT: cabinet, bedroom");
     
             String choice = userInput.nextLine();
             switch(choice){
@@ -248,8 +246,10 @@ public class Rooms {
         Scanner userInput = new Scanner(System.in);
        System.out.println("LOCATION: Bedroom 3");
        Thread.sleep(1500);
-       System.out.println("> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
-       System.out.println("SELECT: Hall, Bathroom, Bed, Dresser");
+       System.out.println("> In the bedroom, you look at your surroundings");
+       Thread.sleep(1500);
+       System.out.println("> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
+       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
        String choice = userInput.nextLine();
 
@@ -262,11 +262,11 @@ public class Rooms {
                 Bath3();
                 break;
             case "bed" : //User chooses the bed
-                System.out.println("\n > You see a pair of jeans on top of the bed ");
+                System.out.println("> You see a pair of jeans on top of the bed ");
                 Bedroom3();
                 break;
             case "dresser": //Player looks in dresser
-                System.out.println("\n > Inside the dresser contains a pair of space boots ");
+                System.out.println("> Inside the dresser contains a pair of space boots ");
                 Thread.sleep(1500);
                 Bedroom3(); //Loop back
                 break;
@@ -285,7 +285,7 @@ public class Rooms {
             System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
             Thread.sleep(1500);
             System.out.println("> In the bathroom you see: A sink, and a toilet. ");
-            System.out.println("SELECT: Toilet, Bedroom");
+            System.out.println("SELECT: toilet, bedroom");
     
             String choice = userInput.nextLine();
             switch(choice){
@@ -314,21 +314,21 @@ public class Rooms {
         System.out.println("\nLOCATION: Dining Room ");
         Thread.sleep(1500);
         System.out.println("> In the Dining Room you see: A table, chairs, a door leading to the Kitchen and a door leading back to the hall. ");
-        System.out.println("SELECT: Table, Chairs, Kitchen, Hall");
+        System.out.println("SELECT: table, chairs, kitchen, hall");
 
         String choice = userInput.nextLine();
         switch(choice){
-            case "Table":
+            case "table":
                 System.out.println("> You see a glass of water and decide to drink it. \n 'hm tastes old. hopefully it wasn't out to long. '");
                 Thread.sleep(1500);
                 DiningRoom();
                 break;
-            case "Chairs":
+            case "chairs":
                 System.out.println("> You sit in a chair and decide to take a load off for a couple of minutes ");
                 Thread.sleep(1500);
                 DiningRoom();
                 break;
-            case "Kitchen":
+            case "kitchen":
                 Kitchen();
                 break;
             default:
@@ -345,7 +345,7 @@ public class Rooms {
         System.out.println("\nLOCATION: Kitchen ");
         Thread.sleep(1500);
         System.out.println("> In the Kitchen you see: A grill,  a stovetop, a sink, and a door leading to the Dining Hall. ");
-        System.out.println("SELECT: Grill, Stovetop, Sink, Dining Room ");
+        System.out.println("SELECT: grill, stovetop, sink, dining Room ");
 
         String choice = userInput.nextLine();
         switch(choice){
@@ -389,24 +389,22 @@ public static void hall2() throws InterruptedException{
    System.out.println("> This hallway has multiple doors you can see: the Comms Room, the Armory, and the Pilots Room");
    Thread.sleep(1500);
    System.out.println("> You can also head downstairs to the main hallway");
-   System.out.println("SELECT: Comms Room, Armory, Pilots Room, main hallway");
+   System.out.println("SELECT: comms room, armory, pilots room, downstairs");
 
    String choice = userInput.nextLine();
 
    
     switch (choice) {
         case "comms room": //Player chooses the comms room
-            comms();
-            
+            comms(); 
             break;       
         case "armory" : //Player chooses the armory
             armory();
-        
             break;
         case "pilots room" : //User chooses the pilots room
             pilots();
             break;
-        case "main hallway" : //User chooses the main hallway
+        case "downstairs" : //User chooses the main hallway
             Hall1();
             break;
         default:
@@ -426,14 +424,14 @@ public static void hall2() throws InterruptedException{
   *   Piece: Pants
   *   EXITS: Hall2
  */
-public static void armory()throws InterruptedException{//TODO: Finish
+public static void armory()throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
     System.out.println("LOCATION: Armory ");
     Thread.sleep(1500);
     System.out.println("> The armory contains two chests, each seems to require a different key to unlock");
     Thread.sleep(1500);
     System.out.println("> You can try to unlock either chest or return to the hallway");
-    System.out.println("SELECT: Hall, Left Chest, Right Chest");
+    System.out.println("SELECT: hall, left chest, right chest");
 
     String choice = userInput.nextLine();
 
@@ -445,17 +443,17 @@ public static void armory()throws InterruptedException{//TODO: Finish
         case "left chest": //Player investigates the chair
             //if player does not have correct key
             if(Inventory.hasRealKey()){
-                System.out.println("\n> You are unable to open this chest");
+                System.out.println("> You are unable to open this chest");
             }
             // if player has correct key
             else if(Inventory.hasPants()) {
-                System.out.println("\n> You open the chest to find your pants somehow ended up inside");
+                System.out.println("> You open the chest to find your pants somehow ended up inside");
                 Thread.sleep(1500);
-                System.out.println("\n> You put on the pants as you wonder how that happened");
+                System.out.println("> You put on the pants as you wonder how that happened");
                 Inventory.collectPants();
             }
             else{
-                System.out.println("\n> You have already opened this chest. It had your pants in it");
+                System.out.println("> You have already opened this chest. It had your pants in it");
             }
             Thread.sleep(2000);
             armory(); //Loop back
@@ -463,17 +461,17 @@ public static void armory()throws InterruptedException{//TODO: Finish
         case "right chest": //Player investigates the chair
             if(Inventory.hasFakeKey()){
             //if player does not have correct key
-                System.out.println("\n> You are unable to open this chest");
+                System.out.println("> You are unable to open this chest");
             }
             // if player has correct key
             else if(!Inventory.emptyChestOpen()){
-            System.out.println("\n> You open the chest to find nothing inside");
+            System.out.println("> You open the chest to find nothing inside");
             Thread.sleep(1500);
-            System.out.println("\n> Perhaps you will have better luck with the other chest");
+            System.out.println("> Perhaps you will have better luck with the other chest");
             Inventory.openEmptyChest();
             }
             else{
-                System.out.println("\n> You have already opened this chest. It was empty");
+                System.out.println("> You have already opened this chest. It was empty");
             }
             Thread.sleep(2000);
             armory(); //Loop back
@@ -490,10 +488,10 @@ public static void armory()throws InterruptedException{//TODO: Finish
 public static void pilots() throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
     
-    System.out.println("\nLOCATION: Pilot's room ");
+    System.out.println("\nLOCATION: Pilot's Room ");
     Thread.sleep(1500);
-    System.out.println("> In the Pilot's room you see 2 seats, a control panel, instruments and doorway to Hall2. ");
-    System.out.println("SELECT: Seat, Control Panel, Instruments, Hall2");
+    System.out.println("> In the Pilot's room you see 2 seats, a control panel, instruments and doorway back to the hall ");
+    System.out.println("SELECT: seat, control panel, instruments, hall");
 
     String choice = userInput.nextLine();
     switch(choice){
@@ -512,7 +510,7 @@ public static void pilots() throws InterruptedException{
             Thread.sleep(1500);
             pilots();
             break;
-        case "Hall2":
+        case "hall":
             hall2();
             break;
         default:
@@ -537,10 +535,10 @@ public static void comms()throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
     System.out.println("LOCATION: Comms Room ");
     Thread.sleep(1500);
-    System.out.println("> the Cooms Room is pretty empty, but you notice something in one of the screens reflections");
+    System.out.println("> The Cooms Room is pretty empty, but you notice something in one of the screens reflections");
     Thread.sleep(1500);
     System.out.println("> It seems there is something in one of the chairs, you can turn the chair or exit back to the hall");
-    System.out.println("SELECT: Hall, Chair");
+    System.out.println("SELECT: hall, chair");
 
     String choice = userInput.nextLine();
 
@@ -558,10 +556,10 @@ public static void comms()throws InterruptedException{
                 break;
             }
             else{
-                System.out.println("\n> You turn the chair around to find you helmet resting in the seat");
+                System.out.println("> You turn the chair around to find you helmet resting in the seat");
                 Thread.sleep(1500);
-                System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
-                Thread.sleep(2000);
+                System.out.println("> You rejoice in finding a piece of your suit and put the helment on");
+                Thread.sleep(1500);
                 Inventory.collectHelmet();
                 comms(); //Loop back
                 break;
@@ -588,14 +586,14 @@ public static void comms()throws InterruptedException{
  */
 public static void hall3() throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
-   System.out.println("LOCATION: Lower Floor Hallway");
+   System.out.println("LOCATION: Lower Level Hallway");
    Thread.sleep(1500);
-   System.out.println("> You enter the hallway of the lower floor");
+   System.out.println("> You enter the hallway of the Lower Level");
    Thread.sleep(1500);
    System.out.println("> This hallway has two doors you can see: the Engine Room and the Boiler Room");
    Thread.sleep(1500);
-   System.out.println("> You can also head upstairs to the main hallway");
-   System.out.println("SELECT: Engine Room, Boiler Room, main hallway");
+   System.out.println("> You can also head upstairs to the Main Level");
+   System.out.println("SELECT: engine room, boiler room, upstairs");
 
    String choice = userInput.nextLine();
 
@@ -609,7 +607,7 @@ public static void hall3() throws InterruptedException{
             boiler();
         
             break;
-        case "main hallway" : //User chooses the main hallway
+        case "upstairs" : //User chooses the main hallway
             Hall1();
             break;
         default:
@@ -627,7 +625,7 @@ public static void hall3() throws InterruptedException{
   *   This room contains 1 exit
   *   EXITS: Hall3
  */
-public static void engine() throws InterruptedException{//TODO: Finish
+public static void engine() throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
     System.out.println("LOCATION: Engine Room");
     Thread.sleep(1500);
@@ -636,28 +634,28 @@ public static void engine() throws InterruptedException{//TODO: Finish
     System.out.println("> Engines, controls, and wires surround you, better watch your step");
     Thread.sleep(1500);
     System.out.println("> You see a slightly open control panel on one of the walls");
-    System.out.println("SELECT: Lower Floor Hallway,  Control Panel");
+    System.out.println("SELECT: hall,  control panel");
 
     String choice = userInput.nextLine();
 
     
     switch (choice) {
-        case "lower floor hallway": //Player chooses to go back into the hall
+        case "hall": //Player chooses to go back into the hall
             hall3();
                 
             break;       
         case "control panel" : //Player chooses to walk up to the control panel
             if(Inventory.hasRealKey() == true){
                 System.out.println("> This panel is completely unfunctional! Someone should get that checked out");
-                Thread.sleep(2000);
+                Thread.sleep(1500);
                 boiler(); //Loop back
                 break;
             }
             else{
                 System.out.println("> You open the control panel door completely and find a key inside");
                 Thread.sleep(1500);
-                System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
-                Thread.sleep(2000);
+                System.out.println("> This looks like it unlocks one of the chests in the armory");
+                Thread.sleep(1500);
                 Inventory.collectRealKey();
                 engine(); //Loop back
                 break;
@@ -678,7 +676,7 @@ public static void engine() throws InterruptedException{//TODO: Finish
   *   ENDINGS: Hidden Donut
   *   EXITS: Hall3
  */
-public static void boiler() throws InterruptedException{//TODO: Finish
+public static void boiler() throws InterruptedException{
     Scanner userInput = new Scanner(System.in);
     System.out.println("LOCATION: Boiler Room");
     Thread.sleep(1500);
@@ -687,20 +685,20 @@ public static void boiler() throws InterruptedException{//TODO: Finish
     System.out.println("> This place is full of pipes, pumps, water tanks, and an interesting looking bucket in one corner");
     Thread.sleep(1500);
     System.out.println("> You notice a jacket hanging on one of the walls");
-    System.out.println("SELECT: Lower Floor Hallway,  Jacket");
+    System.out.println("SELECT: hall,  jacket");
 
     String choice = userInput.nextLine();
 
     
     switch (choice) {
-        case "lower floor hallway": //Player chooses to go back into the hall
+        case "hall": //Player chooses to go back into the hall
             hall3();
                 
             break;       
         case "jacket" : //Player chooses the jacket
             if (Inventory.hasJacket() == true){
                 System.out.println("> You admire your jacket once more, 'I look incredible in this!'");
-                Thread.sleep(2000);
+                Thread.sleep(1500);
                 boiler(); //Loop back
                 break;
             }
@@ -708,14 +706,14 @@ public static void boiler() throws InterruptedException{//TODO: Finish
                 System.out.println("> You take the jacket off the wall and realize it's built for space travel!");
                 Thread.sleep(1500);
                 System.out.println("> You put the jacket on and think to yourself, 'Oh yeah, I look cool'");
-                Thread.sleep(2000);
+                Thread.sleep(1500);
                 Inventory.collectJacket();
                 boiler(); //Loop back
                 break;
             }
         case "bucket" : //Player chooses to check the secret bucket
-            System.out.println("\n> You investigate the mysterious bucket and find a tasty treat inside!");
-            Thread.sleep(2000);
+            System.out.println("> You investigate the mysterious bucket and find a tasty treat inside!");
+            Thread.sleep(1500);
             Endings.hidden(); //Load hidden ending
             break;
         default:
