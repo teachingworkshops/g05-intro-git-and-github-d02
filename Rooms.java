@@ -266,7 +266,7 @@ public static void armory()throws InterruptedException{//TODO: Finish
             break;
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-            Bedroom1();
+            armory();
             break;
         }
         userInput.close();
@@ -312,7 +312,7 @@ public static void comms()throws InterruptedException{
             break;
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-            Bedroom1();
+            comms();
             break;
         }
         userInput.close();
@@ -338,17 +338,17 @@ public static void hall3() throws InterruptedException{
    System.out.println("> This hallway has two doors you can see: the Engine Room and the Boiler Room");
    Thread.sleep(1500);
    System.out.println("> You can also head upstairs to the main hallway");
-   System.out.println("SELECT: Engine Room,  Boiler Room, main hallway");
+   System.out.println("SELECT: Engine Room, Boiler Room, main hallway");
 
    String choice = userInput.nextLine();
 
    
     switch (choice) {
-        case "engine room": //Player chooses the comms room
+        case "engine room": //Player chooses the engine room
             engine();
             
             break;       
-        case "boiler" : //Player chooses the armory
+        case "boiler room" : //Player chooses the boiler room
             boiler();
         
             break;
@@ -357,7 +357,7 @@ public static void hall3() throws InterruptedException{
             break;
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
-            hall2();
+            hall3();
             break;
        }
 
@@ -366,14 +366,90 @@ public static void hall3() throws InterruptedException{
 
     
 }
-    //TODO: Engine Roon
+/*   Engine Room
+  *   This room contains 1 exit
+  *   EXITS: Hall3
+ */
+public static void engine() throws InterruptedException{//TODO: Finish
+    Scanner userInput = new Scanner(System.in);
+    System.out.println("LOCATION: Engine Room");
+    Thread.sleep(1500);
+    System.out.println("> You enter the engine room");
+    Thread.sleep(1500);
+    System.out.println("> Engines, controls, and wires surround you, better watch your step");
+    Thread.sleep(1500);
+    System.out.println("> You see a slightly open control panel on one of the walls");
+    System.out.println("SELECT: Lower Floor Hallway,  Control Panel");
+
+    String choice = userInput.nextLine();
+
     
-    public static void engine(){//TODO: Finish
-        System.out.println("engine Test");
+    switch (choice) {
+        case "lower floor hallway": //Player chooses to go back into the hall
+            hall3();
+                
+            break;       
+        case "control panel" : //Player chooses to walk up to the control panel
+            System.out.println("> You open the control panel door completely and find a key inside");
+            Thread.sleep(1500);
+            System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
+            Thread.sleep(2000);
+            engine(); //Loop back
+            break;
+        default:
+            System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+            engine();
+            break;
     }
-    //TODO: Boiler Room
-    public static void boiler(){//TODO: Finish
-        System.out.println("boiler Test");
+
+    userInput.close();
+
+    }
+
+/*   Boiler Room
+  *   This room contains 1 suit piece, 1 ending, and 1 exit
+  *   PIECES: Jacket
+  *   ENDINGS: Hidden Donut
+  *   EXITS: Hall3
+ */
+public static void boiler() throws InterruptedException{//TODO: Finish
+    Scanner userInput = new Scanner(System.in);
+    System.out.println("LOCATION: Boiler Room");
+    Thread.sleep(1500);
+    System.out.println("> You enter the boiler room");
+    Thread.sleep(1500);
+    System.out.println("> This place is full of pipes, pumps, water tanks, and an interesting looking bucket in one corner");
+    Thread.sleep(1500);
+    System.out.println("> You notice a jacket hanging on one of the walls");
+    System.out.println("SELECT: Lower Floor Hallway,  Jacket");
+
+    String choice = userInput.nextLine();
+
+    
+    switch (choice) {
+        case "lower floor hallway": //Player chooses to go back into the hall
+            hall3();
+                
+            break;       
+        case "jacket" : //Player chooses the jacket
+            System.out.println("> You take the jacket off the wall and realize it's built for space travel!");
+            Thread.sleep(1500);
+            System.out.println("> You put the jacket on and think to yourself, 'Oh yeah, I look cool'");
+            Thread.sleep(2000);
+            boiler(); //Loop back
+            break;
+        case "bucket" : //Player chooses to check the secret bucket
+            System.out.println("\n> You investigate the mysterious bucket and find a tasty treat inside!");
+            Thread.sleep(2000);
+            Endings.hidden(); //Load hidden ending
+            break;
+        default:
+            System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
+            boiler();
+            break;
+    }
+
+     userInput.close();
     }
     
 
