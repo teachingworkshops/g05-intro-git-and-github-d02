@@ -1,6 +1,6 @@
 public class Inventory {
     private boolean helmet = false;
-    private boolean jacket = false;
+    private static boolean jacket = false; //EXAMPLE
     private boolean pants = false;
     private boolean boots = false;
     private boolean fakeKey = false;
@@ -11,7 +11,7 @@ public class Inventory {
         return helmet;
     }
 
-    public boolean hasJacket() {
+    public static boolean hasJacket() { //EXAMPLE
         return jacket;
     }
 

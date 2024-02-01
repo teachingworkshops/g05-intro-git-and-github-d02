@@ -660,7 +660,7 @@ public static void boiler() throws InterruptedException{//TODO: Finish
                 
             break;       
         case "jacket" : //Player chooses the jacket
-            if (Inventory.hasJacket == true){
+            if (Inventory.hasJacket() == true){
                 System.out.println("> You admire your jacket once more, 'I look incredible in this!'");
                 Thread.sleep(2000);
                 boiler(); //Loop back
