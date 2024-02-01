@@ -440,20 +440,37 @@ public static void armory()throws InterruptedException{//TODO: Finish
             break;       
         case "left chest": //Player investigates the chair
             //if player does not have correct key
-            System.out.println("\n> You are unable to open this chest");
+            if(Inventory.hasRealKey()){
+                System.out.println("\n> You are unable to open this chest");
+            }
             // if player has correct key
-            System.out.println("\n> You open the chest to find your pants somehow ended up inside");
-            Thread.sleep(1500);
-            System.out.println("\n> You put on the pants as you wonder how that happened");
+            else if(Inventory.hasPants()) {
+                System.out.println("\n> You open the chest to find your pants somehow ended up inside");
+                Thread.sleep(1500);
+                System.out.println("\n> You put on the pants as you wonder how that happened");
+                Inventory.collectPants();
+            }
+            else{
+                System.out.println("\n> You have already opened this chest. It had your pants in it");
+            }
             Thread.sleep(2000);
             armory(); //Loop back
             break;
         case "right chest": //Player investigates the chair
+            if(Inventory.hasFakeKey()){
             //if player does not have correct key
-            System.out.println("\n> You are unable to open this chest");
+                System.out.println("\n> You are unable to open this chest");
+            }
             // if player has correct key
-            System.out.println("\n> You Open the chest to find nothing inside");
+            else if(!Inventory.emptyChestOpen()){
+            System.out.println("\n> You open the chest to find nothing inside");
+            Thread.sleep(1500);
             System.out.println("\n> Perhaps you will have better luck with the other chest");
+            Inventory.openEmptyChest();
+            }
+            else{
+                System.out.println("\n> You have already opened this chest. It was empty");
+            }
             Thread.sleep(2000);
             armory(); //Loop back
             break;
