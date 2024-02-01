@@ -647,7 +647,7 @@ public static void engine() throws InterruptedException{
     System.out.println("> Engines, controls, and wires surround you, better watch your step");
     Thread.sleep(1500);
     System.out.println("> You see a slightly open control panel on one of the walls");
-    System.out.println("SELECT: hall,  control panel");
+    System.out.println("SELECT: hall, control panel");
 
     String choice = userInput.nextLine();
 
