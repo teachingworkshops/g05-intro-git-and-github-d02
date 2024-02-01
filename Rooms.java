@@ -226,7 +226,7 @@ public class Rooms {
                 case "cabinet":
                     System.out.println("> You open the medicine cabinet and see bottles of pills");
                     Thread.sleep(1500);
-                    Bath1();
+                    Bath2();
                     break;
                 case "bedroom":
                     Bedroom2();
