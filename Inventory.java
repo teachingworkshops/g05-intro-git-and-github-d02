@@ -73,5 +73,14 @@ public class Inventory {
     public static void openEmptyChest() {
         emptyChest = true;
     }
+    public static void resetInventory(){
+        helmet = false;
+        jacket = false; //EXAMPLE
+        pants = false;
+        boots = false;
+        fakeKey = false;
+        realKey = false;
+        emptyChest = false;
+    }
 }
 
