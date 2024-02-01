@@ -541,6 +541,7 @@ public static void comms()throws InterruptedException{
                 Thread.sleep(1500);
                 System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
                 Thread.sleep(2000);
+                Inventory.collectHelmet();
                 comms(); //Loop back
                 break;
             }
@@ -625,12 +626,21 @@ public static void engine() throws InterruptedException{//TODO: Finish
                 
             break;       
         case "control panel" : //Player chooses to walk up to the control panel
-            System.out.println("> You open the control panel door completely and find a key inside");
-            Thread.sleep(1500);
-            System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
-            Thread.sleep(2000);
-            engine(); //Loop back
-            break;
+            if(Inventory.hasRealKey() == true){
+                System.out.println("> This panel is completely unfunctional! Someone should get that checked out");
+                Thread.sleep(2000);
+                boiler(); //Loop back
+                break;
+            }
+            else{
+                System.out.println("> You open the control panel door completely and find a key inside");
+                Thread.sleep(1500);
+                System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
+                Thread.sleep(2000);
+                Inventory.collectRealKey();
+                engine(); //Loop back
+                break;
+            }
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             engine();
