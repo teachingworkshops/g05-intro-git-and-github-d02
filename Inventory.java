@@ -5,6 +5,7 @@ public class Inventory {
     private static boolean boots = false;
     private static boolean fakeKey = false;
     private static boolean realKey = false;
+    
 
     // Getter methods for each item
     public static boolean hasHelmet() {
@@ -31,6 +32,13 @@ public class Inventory {
         return realKey;
     }
 
+    public static boolean hasFullSuit(){
+        if(helmet && jacket && pants  && boots){
+            return true;
+        }else{
+            return false;
+        }
+    }
     // Method to update the status of each item
     public static void collectHelmet() {
         helmet = true;

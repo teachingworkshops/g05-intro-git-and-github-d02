@@ -107,14 +107,18 @@ public class Rooms {
                 Hall1();
                 break;
             case "space":
-            //TODO: Once inventory tracking is implemented, check if spacesuit is fully assembled then determine ending
-            /*
-             * If fully assembled Endings.spaceDonut();
-             * If not fully assembled Endings.dead();
-             * 
-             * Defaulting to dead for now
-             */
-                Endings.dead(); //TEMP FOR NOW!!
+                if(Inventory.hasFullSuit()){
+                    Endings.spaceDonut();
+                }else{
+                    Endings.dead();
+                }
+                break;
+            case "suit": //DEV TOOL FOR TESTING
+                Inventory.collectBoots();
+                Inventory.collectPants();
+                Inventory.collectJacket();
+                Inventory.collectHelmet();
+                Airlock();
                 break;
             default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
