@@ -338,6 +338,9 @@ public class Rooms {
             case "kitchen":
                 Kitchen();
                 break;
+            case "hall": //Player chooses the hall
+                Hall1();
+                break;
             default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             DiningRoom();
