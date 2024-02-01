@@ -444,20 +444,37 @@ public static void armory()throws InterruptedException{//TODO: Finish
             break;       
         case "left chest": //Player investigates the chair
             //if player does not have correct key
-            System.out.println("\n> You are unable to open this chest");
+            if(Inventory.hasRealKey()){
+                System.out.println("\n> You are unable to open this chest");
+            }
             // if player has correct key
-            System.out.println("\n> You open the chest to find your pants somehow ended up inside");
-            Thread.sleep(1500);
-            System.out.println("\n> You put on the pants as you wonder how that happened");
+            else if(Inventory.hasPants()) {
+                System.out.println("\n> You open the chest to find your pants somehow ended up inside");
+                Thread.sleep(1500);
+                System.out.println("\n> You put on the pants as you wonder how that happened");
+                Inventory.collectPants();
+            }
+            else{
+                System.out.println("\n> You have already opened this chest. It had your pants in it");
+            }
             Thread.sleep(2000);
             armory(); //Loop back
             break;
         case "right chest": //Player investigates the chair
+            if(Inventory.hasFakeKey()){
             //if player does not have correct key
-            System.out.println("\n> You are unable to open this chest");
+                System.out.println("\n> You are unable to open this chest");
+            }
             // if player has correct key
-            System.out.println("\n> You Open the chest to find nothing inside");
+            else if(!Inventory.emptyChestOpen()){
+            System.out.println("\n> You open the chest to find nothing inside");
+            Thread.sleep(1500);
             System.out.println("\n> Perhaps you will have better luck with the other chest");
+            Inventory.openEmptyChest();
+            }
+            else{
+                System.out.println("\n> You have already opened this chest. It was empty");
+            }
             Thread.sleep(2000);
             armory(); //Loop back
             break;
@@ -545,6 +562,7 @@ public static void comms()throws InterruptedException{
                 Thread.sleep(1500);
                 System.out.println("\n> You rejocing in fiding a piece of your suit and put the helment on");
                 Thread.sleep(2000);
+                Inventory.collectHelmet();
                 comms(); //Loop back
                 break;
             }
@@ -629,12 +647,21 @@ public static void engine() throws InterruptedException{//TODO: Finish
                 
             break;       
         case "control panel" : //Player chooses to walk up to the control panel
-            System.out.println("> You open the control panel door completely and find a key inside");
-            Thread.sleep(1500);
-            System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
-            Thread.sleep(2000);
-            engine(); //Loop back
-            break;
+            if(Inventory.hasRealKey() == true){
+                System.out.println("> This panel is completely unfunctional! Someone should get that checked out");
+                Thread.sleep(2000);
+                boiler(); //Loop back
+                break;
+            }
+            else{
+                System.out.println("> You open the control panel door completely and find a key inside");
+                Thread.sleep(1500);
+                System.out.println("lowe> This looks like it unlocks one of the chests in the armory");
+                Thread.sleep(2000);
+                Inventory.collectRealKey();
+                engine(); //Loop back
+                break;
+            }
         default:
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             engine();
