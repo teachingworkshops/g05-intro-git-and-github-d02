@@ -51,9 +51,9 @@ public class Rooms {
 
 
 
-    // This method takes a arr. The arr contains all of Dialgoue that needs to be printed. It will also return the response from the user.
+    // This method takes a arr. The arr contains all of Dialogue that needs to be printed. It will also return the response from the user.
     // If you want to give it a delay just add "SLEEP" in the array by itself. -Dylan 
-    public static String Dialgoue(String[] arr) throws InterruptedException{
+    public static String Dialogue(String[] arr) throws InterruptedException{
 
         int sleep_time = 1500;
         for(int i = 0; i < arr.length; i++){
@@ -81,7 +81,7 @@ public class Rooms {
 
     public static void Bedroom1() throws InterruptedException{
 
-       String choice = Dialgoue(bedroom1);
+       String choice = Dialogue(bedroom1);
         switch (choice) {
             case "hall": //Player chooses the hall
                 Hall1();
@@ -111,7 +111,7 @@ public class Rooms {
     */                                                                                                                                                                    
     public static void Bath1() throws InterruptedException{
         
-        String choice = Dialgoue(bath1);
+        String choice = Dialogue(bath1);
         System.out.println(choice);
 
         switch(choice){
@@ -147,7 +147,7 @@ public class Rooms {
      *   EXITS: Hall 1
     */
     public static void Airlock() throws InterruptedException{
-        String choice = Dialgoue(Airlock);
+        String choice = Dialogue(Airlock);
         switch(choice){
             case "hall":
                 Hall1();
@@ -180,7 +180,7 @@ public class Rooms {
     */
     public static void Hall1() throws InterruptedException{
 
-        String choice = Dialgoue(Hall1);
+        String choice = Dialogue(Hall1);
         System.out.println(choice + " THIS IS THE CHOICE I MADE!!");
         switch(choice){
             case "bedroom 1":
@@ -219,7 +219,7 @@ public class Rooms {
     //Bed/bath2: DONE
     public static void Bedroom2() throws InterruptedException{
 
-       String choice = Dialgoue(Bedroom2);
+       String choice = Dialogue(Bedroom2);
 
        
         switch (choice) {
@@ -247,7 +247,7 @@ public class Rooms {
 
         public static void Bath2() throws InterruptedException{
                 
-            String choice = Dialgoue(bath2);
+            String choice = Dialogue(bath2);
             switch(choice){
                 case "cabinet":
                     System.out.println("> You open the medicine cabinet and see bottles of pills");
@@ -270,7 +270,7 @@ public class Rooms {
     public static void Bedroom3() throws InterruptedException{
 
 
-       String choice = Dialgoue(bedroom3);
+       String choice = Dialogue(bedroom3);
 
        
         switch (choice) {
@@ -307,7 +307,7 @@ public class Rooms {
         }
 
     public static void Bath3() throws InterruptedException{
-            String choice = Dialgoue(bath3);
+            String choice = Dialogue(bath3);
 
             switch(choice){
                 case "toilet":
@@ -329,7 +329,7 @@ public class Rooms {
     //Dining/Kitchen: DONE
     public static void DiningRoom() throws InterruptedException{
         
-        String choice = Dialgoue(diningroom);
+        String choice = Dialogue(diningroom);
 
         switch(choice){
             case "table":
@@ -358,7 +358,7 @@ public class Rooms {
 
     public static void Kitchen() throws InterruptedException{
         
-        String choice = Dialgoue(kitchen);
+        String choice = Dialogue(kitchen);
         switch(choice){
             case "grill":
                 System.out.println("> You see that the grill is still on. 'That's a fire hazard. '");
@@ -392,7 +392,7 @@ public class Rooms {
  */
 public static void hall2() throws InterruptedException{
 
-   String choice = Dialgoue(hall2);
+   String choice = Dialogue(hall2);
    
     switch (choice) {
         case "comms room": //Player chooses the comms room
@@ -421,7 +421,7 @@ public static void hall2() throws InterruptedException{
  */
 public static void armory()throws InterruptedException{
 
-    String choice = Dialgoue(armory);
+    String choice = Dialogue(armory);
        
     switch (choice) {
         case "hall": //Player chooses to go back into the hall
@@ -474,7 +474,7 @@ public static void armory()throws InterruptedException{
 public static void pilots() throws InterruptedException{
     
 
-    String choice = Dialgoue(pilots);
+    String choice = Dialogue(pilots);
     switch(choice){
         case "seat":
             System.out.println("> You take a seat ");
@@ -513,7 +513,7 @@ public static void pilots() throws InterruptedException{
  */
 public static void comms()throws InterruptedException{
 
-    String choice = Dialgoue(comms);
+    String choice = Dialogue(comms);
 
        
     switch (choice) {
@@ -558,7 +558,7 @@ public static void comms()throws InterruptedException{
  */
 public static void hall3() throws InterruptedException{
 
-   String choice = Dialgoue(hall3);   
+   String choice = Dialogue(hall3);   
     switch (choice) {
         case "engine room": //Player chooses the engine room
             engine();
@@ -584,7 +584,7 @@ public static void hall3() throws InterruptedException{
 public static void engine() throws InterruptedException{
 
 
-    String choice = Dialgoue(engine);
+    String choice = Dialogue(engine);
 
     
     switch (choice) {
@@ -624,7 +624,7 @@ public static void engine() throws InterruptedException{
  */
 public static void boiler() throws InterruptedException{
 
-    String choice = Dialgoue(boiler);
+    String choice = Dialogue(boiler);
 
     
     switch (choice) {
