@@ -6,17 +6,82 @@ public class Rooms {
   *   This room contains 1 ending, and 2 exits
   *   ENDING: Go-Back-To-Bed
   *   EXITS: Bathroom1 & Hall1
+  
  */
-    public static void Bedroom1() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-       System.out.println("LOCATION: Your Bedroom");
-       Thread.sleep(1500);
-       System.out.println("> In your bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, Your bed and a dresser");
-       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
-       String choice = userInput.nextLine();
+    static final String[] bedroom1 = {"LOCATION: Your Bedroom", "SLEEP","> In your bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, Your bed and a dresser","SELECT: hall, bathroom, bed, dresser"};
+    static final String[] bath1 = {"\nLOCATION: Your Bathroom","SLEEP", "> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'","SLEEP", "> In the bathroom you see: A mirror and a weird key sitting upon the tank of the toilet","SELECT: mirror, key, bedroom",};
+    static final String[] Airlock = {"LOCATION: The Airlock", "SLEEP",  "> You notice that the locker that typically contains your space suit part is empty. ", "SLEEP",  "> 'I must have misplace my gear last night, I can't remember much about last night I guess'", "SELECT: hall, space",};
+    static final String[] Hall1 = {"\nLOCATION: Main Level","SLEEP","> The main level hallway, this level contains many residential needs such as living and dining","SLEEP","> This level also contains the airlock to go out into space and stairs to the upper and lower levels","SELECT: bedroom 1 (Your Bedroom), bedroom 2, bedroom 3, dining, airlock, upstairs, downstairs",};
+    static final String[] Bedroom2 = {"LOCATION: Bedroom 2","SLEEP","> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser","SELECT: hall, bathroom, bed, dresser",};
+    static final String[] bath2 = {"\nLOCATION: Bathroom 2 ", "SLEEP", "> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'", "SLEEP", "> In the bathroom you see: A medicine cabinet above the sink, and a toilet. ", "SELECT: cabinet, bedroom",};
+    static final String[] bedroom3 = {"LOCATION: Bedroom 3", "SLEEP", "> In the bedroom, you look at your surroundings", "SLEEP", "> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser", "SELECT: hall, bathroom, bed, dresser",};
+    static final String[] bath3 = {"\nLOCATION: Bathroom 3 ", "SLEEP", "> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'", "SLEEP", "> In the bathroom you see: A sink, and a toilet. ", "SELECT: toilet, bedroom"};
+    static final String[] diningroom = {"\nLOCATION: Dining Room ","SLEEP","> In the Dining Room you see: A table, chairs, a door leading to the Kitchen and a door leading back to the hall. ","SELECT: table, chairs, kitchen, hall",};
+    static final String[] kitchen = {"\nLOCATION: Kitchen ","SLEEP","> In the Kitchen you see: A grill,  a stovetop, a sink, and a door leading to the Dining Hall. ","SELECT: grill, stovetop, sink, dining Room ",};
+    static final String[] hall2 = {"LOCATION: Upper Floor Hallway","SLEEP","> You enter the hallway of the upper floor","SLEEP","> This hallway has multiple doors you can see: the Comms Room, the Armory, and the Pilots Room","SLEEP","> You can also head downstairs to the main hallway","SELECT: comms room, armory, pilots room, downstairs",};
+    static final String[] armory = {
+        "LOCATION: Armory ",
+        "SLEEP",
+        "> The armory contains two chests, each seems to require a different key to unlock",
+        "SLEEP",
+        "> You can try to unlock either chest or return to the hallway",
+        "SELECT: hall, left chest, right chest",
+    };
+    static final String[] pilots = {"LOCATION: Upper Floor Hallway",
+        "SLEEP",
+        "> You enter the hallway of the upper floor",
+        "SLEEP",
+        "> This hallway has multiple doors you can see: the Comms Room, the Armory, and the Pilots Room",
+        "SLEEP",
+        "> You can also head downstairs to the main hallway",
+        "SELECT: comms room, armory, pilots room, downstairs",
+    };
+    static final String[] comms = {"LOCATION: Comms Room ","SLEEP","> The Cooms Room is pretty empty, but you notice something in one of the screens reflections","SLEEP","> It seems there is something in one of the chairs, you can turn the chair or exit back to the hall","SELECT: hall, chair",};
+    static final String[] hall3 = {"LOCATION: Lower Level Hallway","SLEEP","> You enter the hallway of the Lower Level","SLEEP","> This hallway has two doors you can see: the Engine Room and the Boiler Room","SLEEP","> You can also head upstairs to the Main Level","SELECT: engine room, boiler room, upstairs",};
+    static final String[] engine ={"LOCATION: Engine Room","SLEEP","> You enter the engine room","SLEEP","> Engines, controls, and wires surround you, better watch your step","SLEEP","> You see a slightly open control panel on one of the walls","SELECT: hall, control panel",};
+    static final String[] boiler ={"LOCATION: Boiler Room",
+    "SLEEP",
+    "> You enter the boiler room",
+    "SLEEP",
+    "> This place is full of pipes, pumps, water tanks, and an interesting looking bucket in one corner",
+    "SLEEP",
+    "> You notice a jacket hanging on one of the walls",
+    "SELECT: hall,  jacket",};
 
+
+
+    // This method takes a arr. The arr contains all of Dialgoue that needs to be printed. It will also return the response from the user.
+    // If you want to give it a delay just add "SLEEP" in the array by itself. -Dylan 
+    public static String Dialgoue(String[] arr) throws InterruptedException{
+
+        int sleep_time = 1500;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == "SLEEP"){
+                Thread.sleep(sleep_time);
+            }else{
+                System.out.println(arr[i]);                
+            }
+
+        }        
+                                        // DO NOT CLOSE THE SCANNER
+        /* DO NOT CLOSE THE SCANNER*/ Scanner userInput = new Scanner(System.in); // DO NOT CLOSE THE SCANNER
+                                        // DO NOT CLOSE THE SCANNER 
+        String choice = null;
+        while(userInput.hasNextLine()){
+            choice = userInput.nextLine();
+            if(!choice.isEmpty()){
+                break;
+            }
+        }
        
+        return choice.toLowerCase(); // LOWERCASE because all our switch case are checking for lower case. 
+    }
+
+
+    public static void Bedroom1() throws InterruptedException{
+
+       String choice = Dialgoue(bedroom1);
         switch (choice) {
             case "hall": //Player chooses the hall
                 Hall1();
@@ -37,7 +102,6 @@ public class Rooms {
                 Bedroom1();//Loop back
                 break;
            }
-           userInput.close();
               
     }
 
@@ -46,16 +110,10 @@ public class Rooms {
      *   EXITS: Bedroom1
     */                                                                                                                                                                    
     public static void Bath1() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
         
-        System.out.println("\nLOCATION: Your Bathroom");
-        Thread.sleep(1500);
-        System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
-        Thread.sleep(1500);
-        System.out.println("> In the bathroom you see: A mirror and a weird key sitting upon the tank of the toilet");
-        System.out.println("SELECT: mirror, key, bedroom");
+        String choice = Dialgoue(bath1);
+        System.out.println(choice);
 
-        String choice = userInput.nextLine();
         switch(choice){
             case "mirror":
                 System.out.println("> You look in the mirror and see yourself, hair is a mess, some lines on your cheek from sleeping on your arms\n> 'What the hell happened last night?'");
@@ -81,7 +139,6 @@ public class Rooms {
             break;
         }
 
-        userInput.close();
     }
 
     /* Airlock 
@@ -90,16 +147,7 @@ public class Rooms {
      *   EXITS: Hall 1
     */
     public static void Airlock() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-        
-        System.out.println("LOCATION: The Airlock");
-        Thread.sleep(1500);
-        System.out.println("> You notice that the locker that typically contains your space suit part is empty. ");
-        Thread.sleep(1500);
-        System.out.println("> 'I must have misplace my gear last night, I can't remember much about last night I guess'");
-        System.out.println("SELECT: hall, space");
-        
-        String choice = userInput.nextLine();
+        String choice = Dialgoue(Airlock);
         switch(choice){
             case "hall":
                 Hall1();
@@ -124,7 +172,6 @@ public class Rooms {
             break;
         }
 
-        userInput.close();
     }
 
     /*   Bedroom 1 (The Starting Room)
@@ -132,15 +179,9 @@ public class Rooms {
      *   EXITS: Bedroom1, Bedroom2, Bedroom3, Dining Room, Hall2, Hall3, Airlock
     */
     public static void Hall1() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-        
-        System.out.println("\nLOCATION: Main Level");
-        Thread.sleep(1500);
-        System.out.println("> The main level hallway, this level contains many residential needs such as living and dining");
-        Thread.sleep(1500);
-        System.out.println("> This level also contains the airlock to go out into space and stairs to the upper and lower levels");
-        System.out.println("SELECT: bedroom 1 (Your Bedroom), bedroom 2, bedroom 3, dining, airlock, upstairs, downstairs");
-        String choice = userInput.nextLine();
+
+        String choice = Dialgoue(Hall1);
+        System.out.println(choice + " THIS IS THE CHOICE I MADE!!");
         switch(choice){
             case "bedroom 1":
                 Bedroom1();
@@ -169,7 +210,6 @@ public class Rooms {
             break;
         }
 
-        userInput.close();
     }
  
 
@@ -178,13 +218,8 @@ public class Rooms {
 
     //Bed/bath2: DONE
     public static void Bedroom2() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-       System.out.println("LOCATION: Bedroom 2");
-       Thread.sleep(1500);
-       System.out.println("> In the bedroom, you look at your surroundings \n> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
-       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
-       String choice = userInput.nextLine();
+       String choice = Dialgoue(Bedroom2);
 
        
         switch (choice) {
@@ -208,20 +243,11 @@ public class Rooms {
                 Bedroom2();//Loop back
                 break;
            }
-           userInput.close();
         }
 
         public static void Bath2() throws InterruptedException{
-            Scanner userInput = new Scanner(System.in);
-            
-            System.out.println("\nLOCATION: Bathroom 2 ");
-            Thread.sleep(1500);
-            System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
-            Thread.sleep(1500);
-            System.out.println("> In the bathroom you see: A medicine cabinet above the sink, and a toilet. ");
-            System.out.println("SELECT: cabinet, bedroom");
-    
-            String choice = userInput.nextLine();
+                
+            String choice = Dialgoue(bath2);
             switch(choice){
                 case "cabinet":
                     System.out.println("> You open the medicine cabinet and see bottles of pills");
@@ -237,21 +263,14 @@ public class Rooms {
                 break;
             }
     
-            userInput.close();
         }
 
 
     //Bed/BR3 DONE
     public static void Bedroom3() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-       System.out.println("LOCATION: Bedroom 3");
-       Thread.sleep(1500);
-       System.out.println("> In the bedroom, you look at your surroundings");
-       Thread.sleep(1500);
-       System.out.println("> You notice a few things: A door to the hall, A door to the bathroom, a bed and a dresser");
-       System.out.println("SELECT: hall, bathroom, bed, dresser");
 
-       String choice = userInput.nextLine();
+
+       String choice = Dialgoue(bedroom3);
 
        
         switch (choice) {
@@ -285,19 +304,11 @@ public class Rooms {
                 Bedroom3();//Loop back
                 break;
            }
-           userInput.close();
         }
-        public static void Bath3() throws InterruptedException{
-            Scanner userInput = new Scanner(System.in);
-            
-            System.out.println("\nLOCATION: Bathroom 3 ");
-            Thread.sleep(1500);
-            System.out.println("> 'I don't really need to use the bathroom right now, I am pretty cleaned out.'");
-            Thread.sleep(1500);
-            System.out.println("> In the bathroom you see: A sink, and a toilet. ");
-            System.out.println("SELECT: toilet, bedroom");
-    
-            String choice = userInput.nextLine();
+
+    public static void Bath3() throws InterruptedException{
+            String choice = Dialgoue(bath3);
+
             switch(choice){
                 case "toilet":
                     System.out.println("> You reach your hands in the back of the toilet. \n You find nothing but now your hands are wet.");
@@ -312,21 +323,14 @@ public class Rooms {
                 Bath3();
                 break;
             }
-    
-            userInput.close();
-        }
+    }
 
         
     //Dining/Kitchen: DONE
     public static void DiningRoom() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
         
-        System.out.println("\nLOCATION: Dining Room ");
-        Thread.sleep(1500);
-        System.out.println("> In the Dining Room you see: A table, chairs, a door leading to the Kitchen and a door leading back to the hall. ");
-        System.out.println("SELECT: table, chairs, kitchen, hall");
+        String choice = Dialgoue(diningroom);
 
-        String choice = userInput.nextLine();
         switch(choice){
             case "table":
                 System.out.println("> You see a glass of water and decide to drink it. \n 'hm tastes old. hopefully it wasn't out to long. '");
@@ -350,17 +354,11 @@ public class Rooms {
             break;
         }
 
-        userInput.close();
     }
-    public static void Kitchen() throws InterruptedException{
-        Scanner userInput = new Scanner(System.in);
-        
-        System.out.println("\nLOCATION: Kitchen ");
-        Thread.sleep(1500);
-        System.out.println("> In the Kitchen you see: A grill,  a stovetop, a sink, and a door leading to the Dining Hall. ");
-        System.out.println("SELECT: grill, stovetop, sink, dining Room ");
 
-        String choice = userInput.nextLine();
+    public static void Kitchen() throws InterruptedException{
+        
+        String choice = Dialgoue(kitchen);
         switch(choice){
             case "grill":
                 System.out.println("> You see that the grill is still on. 'That's a fire hazard. '");
@@ -386,7 +384,6 @@ public class Rooms {
             break;
         }
 
-        userInput.close();
     }
 
 /*   Hall 2
@@ -394,18 +391,8 @@ public class Rooms {
   *   Connections: Comms Room, Armory, Pilots Room, and Main Hallway
  */
 public static void hall2() throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-   System.out.println("LOCATION: Upper Floor Hallway");
-   Thread.sleep(1500);
-   System.out.println("> You enter the hallway of the upper floor");
-   Thread.sleep(1500);
-   System.out.println("> This hallway has multiple doors you can see: the Comms Room, the Armory, and the Pilots Room");
-   Thread.sleep(1500);
-   System.out.println("> You can also head downstairs to the main hallway");
-   System.out.println("SELECT: comms room, armory, pilots room, downstairs");
 
-   String choice = userInput.nextLine();
-
+   String choice = Dialgoue(hall2);
    
     switch (choice) {
         case "comms room": //Player chooses the comms room
@@ -424,12 +411,7 @@ public static void hall2() throws InterruptedException{
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             hall2();
             break;
-       }
-
-       userInput.close();
-          
-
-    
+       }              
 }
 /*   Armory - will need to update once suit and key tracking is implemented
   *   This room contains 2 chests, 1 with a suit peice, and 1 exit
@@ -438,16 +420,8 @@ public static void hall2() throws InterruptedException{
   *   EXITS: Hall2
  */
 public static void armory()throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-    System.out.println("LOCATION: Armory ");
-    Thread.sleep(1500);
-    System.out.println("> The armory contains two chests, each seems to require a different key to unlock");
-    Thread.sleep(1500);
-    System.out.println("> You can try to unlock either chest or return to the hallway");
-    System.out.println("SELECT: hall, left chest, right chest");
 
-    String choice = userInput.nextLine();
-
+    String choice = Dialgoue(armory);
        
     switch (choice) {
         case "hall": //Player chooses to go back into the hall
@@ -494,19 +468,13 @@ public static void armory()throws InterruptedException{
             armory();
             break;
         }
-        userInput.close();
 }
 
 
 public static void pilots() throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
     
-    System.out.println("\nLOCATION: Pilot's Room ");
-    Thread.sleep(1500);
-    System.out.println("> In the Pilot's room you see 2 seats, a control panel, instruments and doorway back to the hall ");
-    System.out.println("SELECT: seat, control panel, instruments, hall");
 
-    String choice = userInput.nextLine();
+    String choice = Dialgoue(pilots);
     switch(choice){
         case "seat":
             System.out.println("> You take a seat ");
@@ -532,7 +500,6 @@ public static void pilots() throws InterruptedException{
         break;
     }
 
-    userInput.close();
 }
 
 
@@ -545,15 +512,8 @@ public static void pilots() throws InterruptedException{
   *   EXITS: Hall2
  */
 public static void comms()throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-    System.out.println("LOCATION: Comms Room ");
-    Thread.sleep(1500);
-    System.out.println("> The Cooms Room is pretty empty, but you notice something in one of the screens reflections");
-    Thread.sleep(1500);
-    System.out.println("> It seems there is something in one of the chairs, you can turn the chair or exit back to the hall");
-    System.out.println("SELECT: hall, chair");
 
-    String choice = userInput.nextLine();
+    String choice = Dialgoue(comms);
 
        
     switch (choice) {
@@ -582,7 +542,6 @@ public static void comms()throws InterruptedException{
             comms();
             break;
         }
-        userInput.close();
               
 
         
@@ -598,19 +557,8 @@ public static void comms()throws InterruptedException{
   *   Connections: Engine Room, Boiler Room, Main Hallway
  */
 public static void hall3() throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-   System.out.println("LOCATION: Lower Level Hallway");
-   Thread.sleep(1500);
-   System.out.println("> You enter the hallway of the Lower Level");
-   Thread.sleep(1500);
-   System.out.println("> This hallway has two doors you can see: the Engine Room and the Boiler Room");
-   Thread.sleep(1500);
-   System.out.println("> You can also head upstairs to the Main Level");
-   System.out.println("SELECT: engine room, boiler room, upstairs");
 
-   String choice = userInput.nextLine();
-
-   
+   String choice = Dialgoue(hall3);   
     switch (choice) {
         case "engine room": //Player chooses the engine room
             engine();
@@ -627,29 +575,16 @@ public static void hall3() throws InterruptedException{
             System.out.println("Please make a valid choice (Case Sensitive, all lowercase)");
             hall3();
             break;
-       }
-
-       userInput.close();
-          
-
-    
+       }    
 }
 /*   Engine Room
   *   This room contains 1 exit
   *   EXITS: Hall3
  */
 public static void engine() throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-    System.out.println("LOCATION: Engine Room");
-    Thread.sleep(1500);
-    System.out.println("> You enter the engine room");
-    Thread.sleep(1500);
-    System.out.println("> Engines, controls, and wires surround you, better watch your step");
-    Thread.sleep(1500);
-    System.out.println("> You see a slightly open control panel on one of the walls");
-    System.out.println("SELECT: hall, control panel");
 
-    String choice = userInput.nextLine();
+
+    String choice = Dialgoue(engine);
 
     
     switch (choice) {
@@ -679,9 +614,7 @@ public static void engine() throws InterruptedException{
             break;
     }
 
-    userInput.close();
-
-    }
+}
 
 /*   Boiler Room
   *   This room contains 1 suit piece, 1 ending, and 1 exit
@@ -690,17 +623,8 @@ public static void engine() throws InterruptedException{
   *   EXITS: Hall3
  */
 public static void boiler() throws InterruptedException{
-    Scanner userInput = new Scanner(System.in);
-    System.out.println("LOCATION: Boiler Room");
-    Thread.sleep(1500);
-    System.out.println("> You enter the boiler room");
-    Thread.sleep(1500);
-    System.out.println("> This place is full of pipes, pumps, water tanks, and an interesting looking bucket in one corner");
-    Thread.sleep(1500);
-    System.out.println("> You notice a jacket hanging on one of the walls");
-    System.out.println("SELECT: hall,  jacket");
 
-    String choice = userInput.nextLine();
+    String choice = Dialgoue(boiler);
 
     
     switch (choice) {
@@ -735,8 +659,7 @@ public static void boiler() throws InterruptedException{
             break;
     }
 
-     userInput.close();
-    }
+}
     
 
 }
